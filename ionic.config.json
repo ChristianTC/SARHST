@@ -1,5 +1,7 @@
 {
   "name": "Levo",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
