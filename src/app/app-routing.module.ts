@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+/*import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -20,9 +20,9 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
+*/
 
-
-/*import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 //import { AuthGuard } from './guard/auth.guard';
@@ -31,8 +31,17 @@ const routes: Routes = [
     path: '',
     redirectTo: 'landing',
     pathMatch: 'full'
+    //loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+
   },
-  { path: 'tabs', loadChildren: '../tabs/tabs.module#TabsPageModule' },
+
+      //loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+
+
+  { 
+    path: 'tabs', 
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule) 
+  },
 
   { path: 'landing', loadChildren: './pages/landing/landing.module#LandingPageModule' },  
   { path: 'login', loadChildren: './pages/auth/login/login.module#LoginPageModule' },
@@ -47,4 +56,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-*/
