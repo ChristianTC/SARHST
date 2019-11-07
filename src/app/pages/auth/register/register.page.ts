@@ -30,17 +30,35 @@ export class RegisterPage implements OnInit {
     return await loginModal.present();
   }
   register(form: NgForm) {
-    console.log(form.value.firstName);
-    console.log(form.value.lastName);
+    console.log(form.value.first_name);
+    console.log(form.value.last_name);
     console.log(form.value.dni);
     console.log(form.value.email);
     console.log(form.value.password);
-    
-    this.authService.register(form.value.firstName, form.value.lastName, form.value.dni, form.value.email, form.value.password).subscribe(
-      data => {
-        this.authService.login(form.value.email, form.value.password).subscribe(
-          data => {
-          },
+    console.log(form.value.password2);
+    console.log(form.value.gender);
+    console.log(form.value.city);
+    console.log(form.value.birthDate);
+
+    if(form.value.password==form.value.password2)
+    {
+
+      this.authService.register(
+        
+        form.value.first_name,
+        form.value.last_name,
+        form.value.dni,
+        form.value.email,
+        form.value.password,
+        //form.value.gender,
+        form.value.city,
+        form.value.birthDate
+        
+        ).subscribe(
+        data => {
+          this.authService.login(form.value.email, form.value.password).subscribe(
+            data => {
+            },
           error => {
             console.log(error);
           },
@@ -48,15 +66,19 @@ export class RegisterPage implements OnInit {
             this.dismissRegister();
             this.navCtrl.navigateRoot('/dashboard');
           }
-        );
-        //this.alertService.presentToast(data['message']);
-      },
-      error => {
-        console.log(error);
-      },
-      () => {
-        
-      }
-    );
+          );
+          //this.alertService.presentToast(data['message']);
+        },
+        error => {
+          console.log(error);
+        },
+        () => {
+          
+        }
+      );
+    }
+    else {
+      console.log("Las contrasenas no son iguales");
+    }
   }
 }

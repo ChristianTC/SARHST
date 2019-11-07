@@ -1,1 +1,74 @@
+ 
+/*  ion-tab-bar {
+    //--background: linear-gradient(to right, rgb(105, 166, 226) 5%, #eee 5%) !important;
+    //border: 2px solid red;
+    //border-radius: 5px;
+     //--color: rgb(126, 23, 23);
+   }
+*/
 
+$border-color:rgb(15, 80, 145);
+$ripple-color:#fff;
+
+ ion-tab-button.tab1{
+    //--background: #a9c;
+    //--color: #333;
+    border-top: 2px solid $border-color;
+    //border-radius: 5px;
+    --color-selected:rgb(35, 151, 180);
+    --padding-bottom:0px;
+    --padding-end:0px;	
+    --padding-start:0px;
+    --padding-top:0px;
+    --ripple-color:$ripple-color;
+}
+ion-tab-button.tab2{
+    //--background: #a9c;
+    //--color: #333;
+    border-top: 2px solid $border-color;
+    border-right: 0.5px solid $border-color;
+    border-radius: 0px 15px 5px 5px;
+    --color-selected:rgb(35, 151, 180);
+    --padding-bottom:0px;
+    --padding-end:0px;	
+    --padding-start:0px;
+    --padding-top:0px;
+    --ripple-color:$ripple-color;
+}
+ion-tab-button.tab3{
+    --background: #fff;
+    //--color: #333;
+    border-top: 2px solid $border-color;
+    border-radius: 50px;
+    --color-selected:rgb(35, 151, 180);
+    --padding-bottom:0px;
+    --padding-end:0px;	
+    --padding-start:0px;
+    --padding-top:0px;
+    --ripple-color:$ripple-color;
+}
+ion-tab-button.tab4{
+    //--background: #a9c;
+    //--color: #333;
+    border-top: 2px solid $border-color;
+    border-left: 0.5px solid $border-color;
+    border-radius: 15px 0px 5px 5px;
+    --color-selected:rgb(35, 151, 180);
+    --padding-bottom:0px;
+    --padding-end:0px;	
+    --padding-start:0px;
+    --padding-top:0px;
+    --ripple-color:$ripple-color;
+}
+ion-tab-button.tab5{
+    //--background: #a9c;
+    //--color: #333;
+    border-top: 2px solid $border-color;
+    //border-radius: 5px;
+    --color-selected:rgb(35, 151, 180);
+    --padding-bottom:0px;
+    --padding-end:0px;	
+    --padding-start:0px;
+    --padding-top:0px;
+    --ripple-color:$ripple-color;
+}

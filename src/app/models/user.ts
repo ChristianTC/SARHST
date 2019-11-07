@@ -5,6 +5,8 @@ export class User {
     dni: number;
     gender:string;
     email: string;
+    city: string;
+    birthDate: string;
     username: string;
     password: string;
     

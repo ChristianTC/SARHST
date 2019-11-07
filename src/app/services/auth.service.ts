@@ -45,9 +45,28 @@ export class AuthService {
       }),
     );
   }
-  register(firstName: String, lastName: String, dni: number, email: String, password: String) {
+  register(
+    first_name: String, 
+    last_name: String, 
+    dni: number, 
+    email: String, 
+    password: String,
+    //gender: String,
+    city: String,
+    birthDate: String
+    
+    ) {
     return this.http.post(this.url + 'register/',
-      {firstName: firstName, lastName: lastName, dni: dni, email: email, password: password}
+      {
+        firstName: first_name, 
+        lastName: last_name, 
+        dni: dni, 
+        email: email, 
+        password: password,
+        //gender: gender,
+        city: city,
+        birthDate: birthDate
+      }
     )
   }
 
