@@ -29,7 +29,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'landing',
+    redirectTo: 'login',
     pathMatch: 'full'
     //loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
 
@@ -43,13 +43,13 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule) 
   },
 
-  { path: 'landing', loadChildren: './pages/landing/landing.module#LandingPageModule' },  
+  //{ path: 'landing', loadChildren: './pages/landing/landing.module#LandingPageModule' },  
   { path: 'login', loadChildren: './pages/auth/login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './pages/auth/register/register.module#RegisterPageModule' },
   
   { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule' },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
-  { path: 'list', loadChildren: './list/list.module#ListPageModule' },
+  //{ path: 'home', loadChildren: './home/home.module#HomePageModule' },
+  //{ path: 'list', loadChildren: './list/list.module#ListPageModule' },
   { path: 'slides', loadChildren: './slides/slides.module#SlidesPageModule' },
 
 ];

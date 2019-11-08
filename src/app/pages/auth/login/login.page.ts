@@ -24,13 +24,13 @@ export class LoginPage implements OnInit {
     this.modalController.dismiss();
   }
   // On Register button tap, dismiss login modal and open register modal
-  async registerModal() {
+  /*async registerModal() {
     this.dismissLogin();
     const registerModal = await this.modalController.create({
       component: RegisterPage
     });
     return await registerModal.present();
-  }
+  }*/
   login(form: NgForm) {
     console.log(form.value.username);
     console.log(form.value.password);
@@ -46,5 +46,11 @@ export class LoginPage implements OnInit {
         this.navCtrl.navigateRoot('/slides');
       }
     );
+  }
+  irRegister() {  
+    this.navCtrl.navigateRoot('/register');
+  }
+  irLogin() {  
+    this.navCtrl.navigateRoot('/login');
   }
 }

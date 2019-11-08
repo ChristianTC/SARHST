@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button color="light" (click)="dismissRegister()">Close</ion-button>
+    <ion-button color="light" >Close</ion-button>
     <ion-title>Register</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -51,8 +51,8 @@
       <ion-input type="password" ngModel name="password2"></ion-input>
     </ion-item>
   
-    <ion-button type="submit" expand="full" color="danger">Register</ion-button>
+    <ion-button type="submit" expand="full" color="danger" (click)="irRegister()">Register</ion-button>
   </form>
   <p text-center>Already have a account?</p>
-  <ion-button expand="full" color="primary" (click)="loginModal()">Login</ion-button>
+  <ion-button expand="full" color="primary" (click)="irLogin()">Login</ion-button>
 </ion-content>

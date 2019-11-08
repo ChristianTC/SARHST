@@ -22,12 +22,18 @@ export class RegisterPage implements OnInit {
     this.modalController.dismiss();
   }
   // On Login button tap, dismiss Register modal and open login Modal
-  async loginModal() {
+  /*async loginModal() {
     this.dismissRegister();
     const loginModal = await this.modalController.create({
       component: LoginPage,
     });
     return await loginModal.present();
+  }*/
+  irRegister() {  
+    this.navCtrl.navigateRoot('/register');
+  }
+  irLogin() {  
+    this.navCtrl.navigateRoot('/login');
   }
   register(form: NgForm) {
     console.log(form.value.first_name);
