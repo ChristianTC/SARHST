@@ -50,8 +50,8 @@ const routes: Routes = [
   { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'list', loadChildren: './list/list.module#ListPageModule' },
-  { path: 'tab4', loadChildren: './tab4/tab4.module#Tab4PageModule' },
-  { path: 'tab5', loadChildren: './tab5/tab5.module#Tab5PageModule' },
+  { path: 'slides', loadChildren: './slides/slides.module#SlidesPageModule' },
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
