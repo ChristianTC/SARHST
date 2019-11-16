@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button color="light" >Close</ion-button>
+    <!--<ion-button color="light" >Close</ion-button>-->
     <ion-title>Register</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -28,17 +28,62 @@
   
     <ion-item>
       <ion-label position="floating">Ciudad</ion-label>
-      <ion-input ngModel name="city"></ion-input>
+      <ion-select ngModel="city" name="city" multiple="false" required >
+        <ion-select-option value="LA_PAZ">
+          La Paz
+        </ion-select-option>
+      <ion-select-option value="COCHABAMBA">
+          Cochabamba
+        </ion-select-option>
+        <ion-select-option value="SANTA_CRUZ">
+          Santa Cruz
+        </ion-select-option>
+        <ion-select-option value="POTOSO">
+          Potosi
+        </ion-select-option>
+        <ion-select-option value="ORURO">
+          Oruro
+        </ion-select-option>
+        <ion-select-option value="TARIJA">
+          Tarija
+        </ion-select-option>
+        <ion-select-option value="PANDO">
+          Pando
+        </ion-select-option>
+        <ion-select-option value="BENI">
+          Beni
+        </ion-select-option>
+        <ion-select-option value="SUCRE">
+          Sucre
+        </ion-select-option>
+      </ion-select>
+      <!--<ion-input ngModel name="city"></ion-input>-->
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Género</ion-label>
-      <ion-input ngModel name="gender"></ion-input>
+      
+      <ion-select ngModel="gender" name="gender" multiple="false" required >
+        <ion-select-option value="M">
+          Masculino
+        </ion-select-option>
+      <ion-select-option value="F">
+          Femenino
+        </ion-select-option>
+        <ion-select-option value="O">
+          Otro
+        </ion-select-option>
+      </ion-select>
+
+      <!--<ion-input ngModel name="gender"></ion-input>-->
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Fecha de nacimiento</ion-label>
-      <ion-input ngModel name="birthDate"></ion-input>
+    
+      <ion-datetime ngModel name="birthDate" placeholder="Seleccione una Fecha"></ion-datetime>
+    
+      <!--<ion-input type="date" ngModel name="birthDate"></ion-input>-->
     </ion-item>
 
     <ion-item>

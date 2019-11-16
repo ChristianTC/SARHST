@@ -46,6 +46,13 @@ export class RegisterPage implements OnInit {
     console.log(form.value.city);
     console.log(form.value.birthDate);
 
+    //var str="wdwdwdfewfewfwefew";
+    //console.log(str);
+    //console.log(str.substring(2,5));
+
+    var birthdate = form.value.birthDate.substring(0,10);
+    console.log(birthdate);
+
     if(form.value.password==form.value.password2)
     {
 
@@ -56,9 +63,10 @@ export class RegisterPage implements OnInit {
         form.value.dni,
         form.value.email,
         form.value.password,
-        //form.value.gender,
+        form.value.gender,
         form.value.city,
-        form.value.birthDate
+        birthdate
+        //form.value.birthDate
         
         ).subscribe(
         data => {
@@ -70,7 +78,7 @@ export class RegisterPage implements OnInit {
           },
           () => {
             this.dismissRegister();
-            this.navCtrl.navigateRoot('/dashboard');
+            this.navCtrl.navigateRoot('/login');
           }
           );
           //this.alertService.presentToast(data['message']);

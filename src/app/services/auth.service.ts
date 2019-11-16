@@ -51,7 +51,7 @@ export class AuthService {
     dni: number, 
     email: String, 
     password: String,
-    //gender: String,
+    gender: String,
     city: String,
     birthDate: String
     

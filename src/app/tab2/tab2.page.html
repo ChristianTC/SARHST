@@ -6,4 +6,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+
+
+
+
+    
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let carousel of carousels">
+      <div *ngIf="carousel.show==true">
+        {{ carousel["title"]  }}<br> 
+
+        <ion-img width="30%" height="30%" src="{{carousel['image']}}"></ion-img>
+        <ion-img width="30%" height="30%" src="assets/icon/Imagen_no_disponible.svg"></ion-img>
+        
+<!--        <ion-img width="30%" height="30%" src="{{carousel['image']}}" onerror=this.src="assets/icon/Imagen_no_disponible.svg" ></ion-img>-->
+
+        {{ carousel["order"]  }}<br>
+        {{ carousel["show"]  }}<br><br><br>
+      </div>  
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>
