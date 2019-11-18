@@ -22,15 +22,15 @@ export class AuthService {
   ) { 
     this.url = GLOBAL.url;
   }
-  login(username: String, password: String) {
-    return this.http.post(this.url+'login/',
-      {username: username, password: password}
+  login(email: String, password: String) {
+    return this.http.post(this.url+'auth/login',
+      {email: email, password: password}
     ).pipe(
       tap(token => { 
         console.log(token);
-        console.log(token['token']);
+        console.log(token['access_token']);
         
-        localStorage.setItem('token', token['token'])
+        localStorage.setItem('access_token', token['access_token'])
         
         /*this.storage.setItem('token', token)
         .then(

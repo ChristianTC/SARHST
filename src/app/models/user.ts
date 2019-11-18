@@ -1,13 +1,13 @@
 export class User {
-    id: number;
-    first_name: string;
-    last_name: string;
-    dni: number;
-    gender:string;
+    user_id: number;
+    name: string;
     email: string;
-    city: string;
-    birthDate: string;
-    username: string;
+    email_verified_at: string;
     password: string;
-    
+    type: string;
+    remember_token: string;
+    deleted_at: string;
+    created_at: string;
+    updated_at: string;
+        
 }

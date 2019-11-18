@@ -1,14 +1,68 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div *ngIf="!conductores">
+  <div class="d-flex justify-content-center" style="position:fixed;top:50%;left:50%">
+    <div class="spinner-border text-info" role="status">
+      <span class="sr-only">Cargando Listado...</span>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="box box-success" *ngIf="conductores">
+      <div class="box-header with-border">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h3 class="box-title">{{page_title}}</h3>
+            <div class="box-tools pull-right">
+              <button (click)="refresh()" class="btn btn-primary"> Refrescar</button>
+              <button class="btn btn-success" (click)="new()">Añadir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box-body">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-hover" id="conductores-list">
+                <tr>
+                  <th>Nombre completo</th>
+                  <th>Carnet de identidad</th>
+                  <th>Ruta</th>
+                  <th>Siguiente Punto de control</th>
+                  <th colspan="2">Acciones</th>
+                </tr>
+                <tr *ngFor="let conductor of conductores">
+                  <td>
+                    <a [routerLink]="" (click)="conductorDetalle(conductor.conductor_id)"><strong>{{conductor.nombres}} {{conductor.ap_paterno}} {{conductor.ap_materno}}</strong></a>
+                  </td>
+                  <td>
+                    {{conductor.ci}}
+                  </td>
+                  <td>
+                    <div *ngFor="let ruta of rutas">
+                      <div *ngIf="conductor.ruta_id==ruta.ruta_id">
 
-<ion-content>
+                          <strong>{{ruta.nombre}}</strong>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    {{conductor.next_punto_control}}
+                  </td>
 
+                  <td align="center">
+                    <a [routerLink]="['/conductor-update',conductor.conductor_id]" class="btn btn-warning">Editar</a>
+                  </td>
+                  <td align="center">
+                    <a (click)="deleteCar(conductor.conductor_id)" class="btn btn-danger">Borrar</a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-
-</ion-content>

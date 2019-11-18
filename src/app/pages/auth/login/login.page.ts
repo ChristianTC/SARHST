@@ -32,9 +32,9 @@ export class LoginPage implements OnInit {
     return await registerModal.present();
   }*/
   login(form: NgForm) {
-    console.log(form.value.username);
+    console.log(form.value.email);
     console.log(form.value.password);
-    this.authService.login(form.value.username, form.value.password).subscribe(
+    this.authService.login(form.value.email, form.value.password).subscribe(
       data => {
         //this.alertService.presentToast("Logged In");
       },
@@ -42,7 +42,7 @@ export class LoginPage implements OnInit {
         console.log(error);
       },
       () => {
-        this.dismissLogin();
+        //this.dismissLogin();
         this.navCtrl.navigateRoot('/slides');
       }
     );
