@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Conductor } from 'src/app/models/conductor';
 import { Ruta } from 'src/app/models/ruta';
 import { ConductorService } from 'src/app/services/conductor.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { MenuController } from '@ionic/angular';
 import { RutaService } from '../services/ruta.service';
+import {ConductorDetallePage} from '../conductor-detalle/conductor-detalle.page';
 
 @Component({
   selector: 'app-tab3',
@@ -14,7 +15,9 @@ import { RutaService } from '../services/ruta.service';
 export class Tab3Page {
   
   conductores: Conductor;
+  conductor: Conductor;
   rutas: Ruta;
+  @Input() public id;
 
   constructor(
     private menu: MenuController, 
@@ -42,5 +45,8 @@ export class Tab3Page {
       }
     );
   }
-
+  //conductorDetalle(id: number) {
+  //  const modalRef = this.modalService.open(ConductorDetallePage, {centered: true});
+  //  modalRef.componentInstance.id = id;
+  //}
 }

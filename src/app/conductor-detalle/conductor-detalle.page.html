@@ -1,0 +1,36 @@
+<div *ngIf="conductor">
+
+  <div class="card border-info" style="margin: 5%">
+    <div class="card-header" style="text-align:center">Datos de Conductor</div>
+    <img src="http://157.245.175.97/uploads/avatars/{{conductor.avatar}}" class="card-img-top" alt="..." style="margin-left: 25%">
+    <div class="card-body" style="text-align:center">
+      <h5 class="card-title">{{conductor.nombres}} {{conductor.ap_paterno}} {{conductor.ap_materno}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <strong>Carnet de Identitad:</strong>
+        {{conductor.ci}}
+      </li>
+      <li class="list-group-item">
+        <strong>Fecha de Nacimiento:</strong>
+        {{conductor.fecha_nacimiento}}
+      </li>
+      <li class="list-group-item">
+        <strong>Dirección:</strong>
+        {{conductor.direccion}}
+      </li>
+    </ul>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-6">
+          <strong>Celular:</strong>
+          {{conductor.celular}}
+        </div>
+        <div class="col-6">
+          <strong>Teléfono:</strong>
+          {{conductor.telefono}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

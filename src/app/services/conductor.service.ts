@@ -37,7 +37,23 @@ export class ConductorService {
       }
     )
   }
-
+  
+  getConductor(id) {
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('access_token')).set('Content-Type', 'application/json');
+    
+    /*const headers = new HttpHeaders({
+      'Authorization': this.token["token_type"]+" "+this.token["access_token"]
+    });*/
+    return this.http.get<Conductor>(this.url + 'Conductor/'+id, { headers: headers })
+    .pipe(
+      tap(conductor => {
+        //console.log(news);
+        //console.log(news["results"]);
+        return conductor;
+      })
+    )
+  }
+  
   getConductores() {
     const headers = new HttpHeaders().set('Authorization', 'Bearer '+localStorage.getItem('access_token'));
 
