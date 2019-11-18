@@ -1,3 +1,21 @@
+
+<ion-header no-border>
+  <ion-toolbar>
+    <!--<ion-title text-capitalize>{{ nombre }} -- {{ pais }}</ion-title>-->
+    <ion-button (click)="salirSinArgumentos()" color="primary" expand="full">
+    Salir
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--<ion-button (click)="salirSinArgumentos()" color="primary" expand="full">
+    Salir sin argumentos
+  </ion-button>
+  <ion-button (click)="salirConArgumentos()" color="secondary" expand="full">
+    Salir con argumentos
+  </ion-button>-->
+
 <div *ngIf="conductor">
 
   <div class="card border-info" style="margin: 5%">
@@ -34,3 +52,4 @@
     </div>
   </div>
 </div>
+</ion-content>

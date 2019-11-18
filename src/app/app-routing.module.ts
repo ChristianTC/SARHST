@@ -51,7 +51,7 @@ const routes: Routes = [
   //{ path: 'home', loadChildren: './home/home.module#HomePageModule' },
   //{ path: 'list', loadChildren: './list/list.module#ListPageModule' },
   { path: 'slides', loadChildren: './slides/slides.module#SlidesPageModule' },
-  { path: 'conductor-detalle', loadChildren: './conductor-detalle/conductor-detalle.module#ConductorDetallePageModule' },
+  //{ path: 'conductor-detalle', loadChildren: './conductor-detalle/conductor-detalle.module#ConductorDetallePageModule' },
 
 ];
 @NgModule({

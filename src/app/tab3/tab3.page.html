@@ -7,6 +7,16 @@
 </div>
 
 <ion-content>
+
+  <ion-button extend="full"
+  (click)="abrirModal()">
+  Abrir Modal
+  </ion-button>
+
+  <p>
+    test -  bolivia
+  </p>
+
 <div class="box-tools pull-right">
   <button (click)="refresh()" class="btn btn-primary"> Refrescar</button>
 </div>
@@ -36,7 +46,7 @@
   <ion-row class="ion-align-items-center" *ngFor="let conductor of conductores">
     <ion-col>
       <div>
-        <a [routerLink]="" (click)="conductorDetalle(conductor.conductor_id)"><strong>{{conductor.nombres}} {{conductor.ap_paterno}} {{conductor.ap_materno}}</strong></a>
+        <a [routerLink]="" (click)="abrirModal(conductor.conductor_id)"><strong>{{conductor.nombres}} {{conductor.ap_paterno}} {{conductor.ap_materno}}</strong></a>
       </div>
     </ion-col>
     <ion-col>

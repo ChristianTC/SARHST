@@ -3,7 +3,7 @@ import { Conductor } from 'src/app/models/conductor';
 import { Ruta } from 'src/app/models/ruta';
 import { ConductorService } from 'src/app/services/conductor.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { MenuController } from '@ionic/angular';
+import { MenuController, ModalController } from '@ionic/angular';
 import { RutaService } from '../services/ruta.service';
 import {ConductorDetallePage} from '../conductor-detalle/conductor-detalle.page';
 
@@ -24,10 +24,26 @@ export class Tab3Page {
     private authService: AuthService,
     private conductorService: ConductorService,
     private rutaService: RutaService,
+    private modalCtrl: ModalController
   ) { }
 
   ngOnInit() {
   }
+
+  async abrirModal(id){
+    console.log("fetre");
+  const modal = await this.modalCtrl.create({
+    component: ConductorDetallePage,
+    componentProps: {
+      id: id,
+      pais: 'bolivia'
+    }
+  });
+
+  await modal.present();
+
+}
+
   refresh() {
     window.location.reload();
   }
