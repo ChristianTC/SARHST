@@ -11,10 +11,21 @@ $border-color:rgb(15, 80, 145);
 $ripple-color:#fff;
 
  ion-tab-button.tab1{
-    //--background: #a9c;
+/*    //--background: #a9c;
     //--color: #333;
     border-top: 2px solid $border-color;
     //border-radius: 5px;
+    --color-selected:rgb(35, 151, 180);
+    --padding-bottom:0px;
+    --padding-end:0px;	
+    --padding-start:0px;
+    --padding-top:0px;
+    --ripple-color:$ripple-color;*/
+        //--background: #a9c;
+    //--color: #333;
+    border-top: 2px solid $border-color;
+    border-right: 0.5px solid $border-color;
+    border-radius: 0px 15px 5px 5px;
     --color-selected:rgb(35, 151, 180);
     --padding-bottom:0px;
     --padding-end:0px;	
@@ -61,10 +72,21 @@ ion-tab-button.tab4{
     --ripple-color:$ripple-color;
 }
 ion-tab-button.tab5{
-    //--background: #a9c;
+    /*//--background: #a9c;
     //--color: #333;
     border-top: 2px solid $border-color;
     //border-radius: 5px;
+    --color-selected:rgb(35, 151, 180);
+    --padding-bottom:0px;
+    --padding-end:0px;	
+    --padding-start:0px;
+    --padding-top:0px;
+    --ripple-color:$ripple-color;*/
+        //--background: #a9c;
+    //--color: #333;
+    border-top: 2px solid $border-color;
+    border-left: 0.5px solid $border-color;
+    border-radius: 15px 0px 5px 5px;
     --color-selected:rgb(35, 151, 180);
     --padding-bottom:0px;
     --padding-end:0px;	
