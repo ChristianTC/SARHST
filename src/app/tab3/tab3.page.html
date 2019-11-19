@@ -1,3 +1,12 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <!--<ion-title text-capitalize>{{ nombre }} -- {{ pais }}</ion-title>-->
+    <ion-button (click)="refresh()" color="primary" expand="full">
+    Actualizar
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
 <div *ngIf="!conductores">
   <div class="d-flex justify-content-center" style="position:fixed;top:50%;left:50%">
     <div class="spinner-border text-info" role="status">
@@ -7,136 +16,56 @@
 </div>
 
 <ion-content>
-
-  <ion-button extend="full"
-  (click)="abrirModal()">
-  Abrir Modal
-  </ion-button>
-
-  <p>
-    test -  bolivia
-  </p>
-
-<div class="box-tools pull-right">
-  <button (click)="refresh()" class="btn btn-primary"> Refrescar</button>
-</div>
-<ion-grid>
-  <ion-row class="ion-align-items-center">
-    <ion-col>
-      <div>
-        Nombre completo
-      </div>
-    </ion-col>
-    <ion-col>
-      <div>
-        Carnet de identidad
-      </div>
-    </ion-col>
-    <ion-col>
-      <div>
-        Ruta
-      </div>
-    </ion-col>
-    <ion-col>
-      <div>
-        Siguiente Punto de control
-      </div>
-    </ion-col>
-  </ion-row>
-  <ion-row class="ion-align-items-center" *ngFor="let conductor of conductores">
-    <ion-col>
-      <div>
-        <a [routerLink]="" (click)="abrirModal(conductor.conductor_id)"><strong>{{conductor.nombres}} {{conductor.ap_paterno}} {{conductor.ap_materno}}</strong></a>
-      </div>
-    </ion-col>
-    <ion-col>
-      <div>
-        {{conductor.ci}}
-      </div>
-    </ion-col>
-    <ion-col>
-      <div>
-        <div *ngFor="let ruta of rutas">
-                      <div *ngIf="conductor.ruta_id==ruta.ruta_id">
-
-                          <strong>{{ruta.nombre}}</strong>
-                      </div>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        <div>
+          Nombre completo
         </div>
-      </div>
-    </ion-col>
-    <ion-col>
-      <div>
-        {{conductor.next_punto_control}}
-      </div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+      </ion-col>
+      <ion-col>
+        <div>
+          Carnet de identidad
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          Ruta
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          Siguiente Punto de control
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center" *ngFor="let conductor of conductores">
+      <ion-col>
+        <div>
+          <a [routerLink]="" (click)="abrirModal(conductor.conductor_id)"><strong>{{conductor.nombres}} {{conductor.ap_paterno}} {{conductor.ap_materno}}</strong></a>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          {{conductor.ci}}
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <div *ngFor="let ruta of rutas">
+                        <div *ngIf="conductor.ruta_id==ruta.ruta_id">
 
- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="box box-success" *ngIf="conductores">
-      <div class="box-header with-border">
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h3 class="box-title">{{page_title}}</h3>
-            <div class="box-tools pull-right">
-              <button (click)="refresh()" class="btn btn-primary"> Refrescar</button>
-              <button class="btn btn-success" (click)="new()">Añadir</button>
-            </div>
+                            <strong>{{ruta.nombre}}</strong>
+                        </div>
           </div>
         </div>
-      </div>
-      <div class="box-body">
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="table-responsive">
-              <table class="table table-bordered table-striped table-hover" id="conductores-list">
-                <tr>
-                  <th>Perfil</th>
-                  <th>Nombre completo</th>
-                  <th>Carnet de identidad</th>
-                  <th>Celular</th>
-                  <th>Ruta</th>
-                  <th>Siguiente Punto de control</th>
-                  <th colspan="2">Acciones</th>
-                </tr>
-                <tr *ngFor="let conductor of conductores">
-                  <td>
-                    <img src="http://157.245.175.97/uploads/avatars/{{conductor.avatar}}" width=50 height=50>
-                  </td>
-                  <td>
-                    <a [routerLink]="" (click)="conductorDetalle(conductor.conductor_id)"><strong>{{conductor.nombres}} {{conductor.ap_paterno}} {{conductor.ap_materno}}</strong></a>
-                  </td>
-                  <td>
-                    {{conductor.ci}}
-                  </td>
-                  <td>
-                    {{conductor.celular}}
-                  </td>
-                  <td>
-                    <div *ngFor="let ruta of rutas">
-                      <div *ngIf="conductor.ruta_id==ruta.ruta_id">
-
-                          <strong>{{ruta.nombre}}</strong>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    {{conductor.next_punto_control}}
-                  </td>
-
-                  <td align="center">
-                    <a [routerLink]="['/conductor-update',conductor.conductor_id]" class="btn btn-warning">Editar</a>
-                  </td>
-                  <td align="center">
-                    <a (click)="deleteCar(conductor.conductor_id)" class="btn btn-danger">Borrar</a>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          {{conductor.next_punto_control}}
         </div>
-      </div>
-    </div>
-  </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { New } from 'src/app/models/new';
+import { User } from 'src/app/models/user';
 import { NewsService } from 'src/app/services/news.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { MenuController } from '@ionic/angular';
@@ -10,7 +10,7 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./tab4.page.scss'],
 })
 export class Tab4Page implements OnInit {
-  news: New;
+  user: User;
 
   constructor(
     private menu: MenuController, 
@@ -22,10 +22,10 @@ export class Tab4Page implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.newsService.getNews().subscribe(
-      news => {
-        console.log(news["results"]);
-        this.news = news["results"];
+    this.authService.user().subscribe(
+      response => {
+        console.log(response);
+        this.user = response;
       }
     );
   }

@@ -3,16 +3,20 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>tab5</ion-title>
+    <ion-title>Mi perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
   <div *ngIf="user != undefined">
-      Welcome {{ user["firstName"]  }}<br> 
-      {{ user["firstName"]  }}<br>
-      {{ user["lastName"]  }}<br>
-      {{ user["email"]  }}<br>
-      {{ user["birthDate"]  }}<br>
+      <strong>Bienvenido {{ user["name"]  }}</strong><br> 
+      <br>Correo Electronico:<br>{{ user["email"]  }}<br>
+      <br>Usted es {{ user["type"]  }}<br>
   </div>
 
 </ion-content>
+
+<ion-footer>
+  <ion-button (click)="logout()" color="primary" expand="full">
+    Cerrar sesion
+  </ion-button>
+</ion-footer>

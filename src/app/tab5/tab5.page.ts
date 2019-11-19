@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth.service';
 import { MenuController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab5',
@@ -12,7 +13,8 @@ export class Tab5Page implements OnInit {
   user: User;
 
   constructor(
-    private menu: MenuController, private authService: AuthService
+    private menu: MenuController, private authService: AuthService, private navCtrl: NavController
+
   ) { }
 
   ngOnInit() {
@@ -25,4 +27,11 @@ export class Tab5Page implements OnInit {
       }
     );
   }
+
+  logout(){
+    localStorage.clear();
+    this.navCtrl.navigateRoot('/login');
+  }
+
+
 }

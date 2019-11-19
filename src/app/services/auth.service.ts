@@ -72,9 +72,9 @@ export class AuthService {
 
   
   logout() {
-    const headers = new HttpHeaders().set('Authorization','Token '+localStorage.getItem('token'));
+    const headers = new HttpHeaders().set('Authorization','Bearer '+localStorage.getItem('access_token'));
     const json = '';
-    return this.http.post(this.url + 'logout/',json, { headers: headers })
+    return this.http.post(this.url + 'auth/logout',json, { headers: headers })
     .pipe(
       tap(data => {
         console.log(data);
@@ -88,12 +88,12 @@ export class AuthService {
   }
 
   user() {
-    const headers = new HttpHeaders().set('Authorization', 'Token '+localStorage.getItem('token'));
+    const headers = new HttpHeaders().set('Authorization', 'Bearer '+localStorage.getItem('access_token'));
 
     /*const headers = new HttpHeaders({
       'Authorization': this.token["token_type"]+" "+this.token["access_token"]
     });*/
-    return this.http.get<User>(this.url + 'me/', { headers: headers })
+    return this.http.get<User>(this.url + 'auth/user', { headers: headers })
     .pipe(
       tap(user => {
         console.log(user);
