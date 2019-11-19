@@ -11,7 +11,7 @@
   
     <ion-item>
       
-      <ion-label position="floating">Conductor</ion-label>
+      <ion-label position="floating">Seleccione el conductor</ion-label>
       
       <ion-select ngModel="conductor_id" name="conductor_id" multiple="false" required >
         <ion-select-option *ngFor="let conductor of conductores" value="{{conductor.conductor_id}}">
@@ -21,6 +21,6 @@
       <!--<ion-input ngModel name="city"></ion-input>-->
     </ion-item>
   
-    <ion-button type="submit" expand="full" color="danger" (click)="reportar(form)">Reportar</ion-button>
+    <ion-button type="submit" expand="full" color="primary" >Reportar</ion-button>
   </form>
 </ion-content>
